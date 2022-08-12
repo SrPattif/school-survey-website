@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap');
+
+body {
+    font-family: "Poppins";
+    background: #dde5f4;
+    margin: 0em;
+    padding: 0em;
+}
+
+.header {
+    margin: 0 0 0 0;
+    padding: 0.5em 0 0.5em 0;
+    text-align: center;
+    background-color: rgb(26, 108, 141, 1);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.page-content {
+    animation: fadeIn 1s ease-in 0s 1 normal forwards;
+    margin: 1em 3em 1em 3em;
+}
+
+.footer {
+    text-align: center;
+    color: #9398a1;
+
+    a {
+        color: #9398a1;
+        text-decoration: none;
+    }
+
+    span {
+        font-size: 10px;
+    }
+}
+
+.survey-greetings {
+    text-align: center;
+    padding: 1em;
+    border: #9e9e9e 1px solid;
+    border-radius: 1em;
+    margin-bottom: 1em;
+    background-color: #fff;
+
+    text-align: center;
+    justify-content: center;
+
+    border-top: rgb(26, 108, 141, 1) 4px solid;
+
+    .title {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+}
+
+.greet-hr {
+    margin: 2em;
+}
+
+.question {
+    margin-top: 1em;
+    text-align: center;
+    padding: 1em;
+    border: #9e9e9e 1px solid;
+    border-radius: 1em;
+    margin-bottom: 3em;
+    background-color: #fff;
+
+    text-align: center;
+    justify-content: center;
+
+    .title {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    .custom-select {
+        margin: auto;
+        margin-top: 1em;
+        padding: 0.5em 2em 0.5em 2em;
+        background-color: rgb(248, 248, 248);
+        border: none;
+        border-radius: 9px;
+        border: #dfdfdf 1px solid;
+        text-align: center;
+
+        width: fit-content;
+
+        hr {
+            margin: 0 3em 0 3em;
+        }
+
+        .custom-option {
+            cursor: pointer;
+            font-size: 0.9em;
+            color: #252525;
+            margin: 0.5em 0 0.5em 0;
+            background-color: #f1f1f1;
+            border-radius: 6px;
+            padding: 0 1em 0 1em;
+        }
+
+        .custom-option:hover {
+            color: rgb(26, 108, 141, 1);
+            background-color: #e6e4e4;
+        }
+
+        .selected {
+            border-left: rgb(26, 108, 141, 1) 4px solid;
+            color: rgb(26, 108, 141, 1);
+            background-color: #e6e4e4;
+            border-radius: 6px;
+            padding: 0 1em 0 1em;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        filter: blur(1px);
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
