@@ -9,7 +9,7 @@
 <body>
 
     <?php
-        header('location: ../view/pesquisa');
+        header('location: ../surveyDetails');
         exit();
     ?>
     

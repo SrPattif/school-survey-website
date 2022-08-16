@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include("../libs/databaseConnection.php");
 
     $surveyID = 0;
@@ -34,7 +35,7 @@
         </div>
 
         <div class="page-content">
-            <?php
+                <?php
                 $selectQuery = "SELECT * FROM surveys WHERE id='{$surveyID}'";
 
                 $queryResult = mysqli_query($connection, $selectQuery);
@@ -45,17 +46,19 @@
 
                 foreach($queryQuestionsArray as $key => $rowQuestion) {
             ?>
-            <div class="survey-greetings">
-                <div class="title"><?php echo($rowQuestion['title']); ?></div>
-                <div class="description"><?php echo($rowQuestion['description']); ?></div>
-            </div>
-            <?php
+                <div class="survey-greetings">
+                    <div class="title"><?php echo($rowQuestion['title']); ?></div>
+                    <div class="description"><?php echo($rowQuestion['description']); ?></div>
+                </div>
+                <?php
                 }
             ?>
 
-            <hr class="greet-hr">
+                <hr class="greet-hr">
 
-            <?php
+                <form method="POST" action="../libs/submitAnswer.php?surveyID=<?php echo($surveyID); ?>">
+
+                <?php
                 $selectQuery = "SELECT * FROM questions WHERE survey_id='{$surveyID}'";
 
                 $queryResult = mysqli_query($connection, $selectQuery);
@@ -64,17 +67,19 @@
                     $queryQuestionsArray[] = $rowQuestion;
                 }
 
+                $questionCount = 0;
                 foreach($queryQuestionsArray as $key => $rowQuestion) {
+                    $questionCount++;
                     $questionId = $rowQuestion['id'];
             ?>
 
-            <div class="question">
-                <div class="title">
-                    <span><?php echo($rowQuestion['description']); ?></span>
-                </div>
-                <div class="custom-select">
+                <div class="question">
+                    <div class="title">
+                        <span><?php echo($rowQuestion['description']); ?></span>
+                    </div>
+                    <div class="custom-select">
 
-            <?php
+                        <?php
                 $selectAnswersQuery = "SELECT * FROM answer_options WHERE question_id='{$questionId}'";
 
                 $queryAnswersResult = mysqli_query($connection, $selectAnswersQuery);
@@ -83,19 +88,33 @@
                     $queryAnswersArray[] = $rowAnswer;
                 }
 
-                foreach($queryAnswersArray as $key => $rowAnswer) {
-            ?>
-                <div class="custom-option"><span><?php echo($rowAnswer['option']); ?></span></div>
-                    <hr>
-            <?php
-                }
-            ?>
-                </div>
-            </div>
+                $answerId = 0;
 
-            <?php
+                foreach($queryAnswersArray as $key => $rowAnswer) {
+                    $answerId++;
+            ?>
+                        <div class="custom-option" id="<?php echo($questionCount . ',' . $answerId); ?>"
+                            onclick="answerClick('<?php echo($questionCount . ',' . $answerId); ?>');">
+                            <span><?php echo($rowAnswer['option']); ?></span></div>
+                        <hr>
+                        <?php
                 }
             ?>
+                        <input type="hidden" name="<?php echo($questionId); ?>" id="<?php echo($questionCount); ?>">
+                    </div>
+                </div>
+
+                <?php
+                }
+            ?>
+                <p class="center">Confira se todas as perguntas foram respondidas e envie suas respostas! :-)</p>
+                <div class="btnEnviar">
+                    <div class="btnText" id="survey-send">
+                        <button type="submit"><i class="fa fa-paper-plane icon" aria-hidden="true"></i> Enviar
+                            Respostas</button>
+                    </div>
+                </div>
+            </form>
         </div>
 
         <div class="footer">
@@ -106,5 +125,26 @@
         </div>
     </body>
 </body>
+
+<script>
+function answerClick(id) { // <questionid>,<answerid>
+    var questionId = id.toString().split(',')[0];
+    var answerId = id.toString().split(',')[1];
+
+    var answerText = document.getElementById(id).innerHTML;
+    document.getElementById(questionId).value = answerText.replace('<span>', '').replace('</span>', '');
+
+    for (let i = 0; i < 10; i++) {
+        let questI = document.getElementById(questionId + ',' + i);
+        if (questI) {
+            questI.classList.remove('selected');
+
+            if (i == answerId) {
+                questI.classList.add('selected');
+            }
+        }
+    }
+}
+</script>
 
 </html>

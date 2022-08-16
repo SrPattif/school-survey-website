@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap");
+body {
+  font-family: "Poppins";
+  background: #dde5f4;
+  margin: 0em;
+  padding: 0em;
+}
+
+.header {
+  margin: 0 0 0 0;
+  padding: 0.5em 0 0.5em 0;
+  text-align: center;
+  background-color: rgb(26, 108, 141);
+  font-family: "Work Sans", sans-serif;
+  font-size: 22px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.page-content {
+  -webkit-animation: fadeIn 1s ease-in 0s 1 normal forwards;
+          animation: fadeIn 1s ease-in 0s 1 normal forwards;
+  margin: 1em;
+}
+
+.central-message {
+  text-align: center;
+  padding: 1em;
+  border: #9e9e9e 1px solid;
+  border-radius: 1em;
+  display: block;
+}
+
+.footer {
+  text-align: center;
+  color: #9398a1;
+}
+.footer a {
+  color: #9398a1;
+  text-decoration: none;
+}
+.footer span {
+  font-size: 10px;
+}
+
+hr {
+  margin: 2em;
+}
+
+.mainMenu {
+  text-decoration: none;
+  color: #232b2b;
+  font-weight: bold;
+  letter-spacing: 0px;
+}
+
+.mainMenu:hover {
+  -webkit-animation: spacingGreater 1s ease 0s 1 normal forwards;
+          animation: spacingGreater 1s ease 0s 1 normal forwards;
+}
+
+.answerCode {
+  background-color: #394242;
+  color: white;
+  padding: 0.2em 0.7em 0.2em 0.7em;
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 2em;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    filter: blur(1px);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    filter: blur(1px);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes spacingGreater {
+  0% {
+    letter-spacing: 0px;
+  }
+  100% {
+    letter-spacing: 1px;
+  }
+}
+@keyframes spacingGreater {
+  0% {
+    letter-spacing: 0px;
+  }
+  100% {
+    letter-spacing: 1px;
+  }
+}/*# sourceMappingURL=index.css.map */

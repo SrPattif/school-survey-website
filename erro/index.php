@@ -18,7 +18,7 @@
     <div class="pageContent">
         <i class="fa fa-times" aria-hidden="true"></i><br>
         <span class="errorTitle">Ocorreu um Erro</span><br>
-        <span class="errorDescription">Tivemos um problema enquanto tentávamos carregar as informações. :/</span><br><br>
+        <span class="errorDescription">Tivemos um problema enquanto tentávamos processar as informações. :/</span><br><br>
         <span class="errorCode">
             <?php
                 if(!isset($_GET['id'])) {
@@ -31,7 +31,7 @@
                 }
             ?>
         </span><br><br>
-        <a href="../pesquisa/?p=responderPesquisa" class="mainMenu"><i class="fa fa-home" aria-hidden="true"></i> Voltar ao menu principal</a>
+        <a href="../" class="mainMenu"><i class="fa fa-home" aria-hidden="true"></i> Voltar ao menu principal</a>
     </div>
 </body>
 
