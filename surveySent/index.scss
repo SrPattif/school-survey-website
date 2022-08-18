@@ -61,6 +61,16 @@ hr {
   animation: spacingGreater 1s ease 0s 1 normal forwards;
 }
 
+.feedback {
+  text-decoration: none;
+  color: #232b2b;
+  letter-spacing: 0px;
+}
+
+.feedback:hover {
+  animation: spacingGreater 1s ease 0s 1 normal forwards;
+}
+
 .answerCode {
   background-color: #394242;
   color: white;

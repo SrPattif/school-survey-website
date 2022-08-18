@@ -8,9 +8,12 @@
 
     $surveyID = $_GET['surveyID'];
 
-    $insert = "INSERT INTO answers (`answer_uuid`, `question_id`, `answer`) VALUES ";
+    $insert = "INSERT INTO answers (`answer_uuid`, `question_id`, `answer`, `submit_timestamp`) VALUES ";
 
-    $answerUUID = uniqid();
+    $answerUUID = "survey" . $surveyID . "-";
+    $answerUUID .= uniqid();
+
+    $timestamp = time();
 
     $am = 0;
     foreach ($_POST as $questionId => $questionAnswer) {
@@ -19,13 +22,18 @@
 
         if($am > 0) $insert = $insert . ", ";
         $am++;
-        $insert = $insert . "('{$answerUUID}', {$questionId}, '{$questionAnswer}')";
+        $insert = $insert . "('{$answerUUID}', {$questionId}, '{$questionAnswer}', {$timestamp})";
     }
     $insert = $insert . ";";
 
     $insertQuery = mysqli_query($connection, $insert);
 
     if ($insertQuery) {
+        if($surveyID != "16") {
+            header('location: ../surveyAnswer/?surveyID=16');
+            exit(); 
+        }
+
 	    header('location: ../surveySent/?answerUUID=' . $answerUUID);
 	    exit();
 

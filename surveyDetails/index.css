@@ -19,7 +19,6 @@ body {
 }
 
 .input-number {
-  background-color: #ececec;
   border: none;
   padding: 0.5em;
   width: 3em;
@@ -28,6 +27,10 @@ body {
   border: #c5c5c5 1px solid;
   text-align: center;
   font-family: "Poppins";
+}
+
+.input-number:focus {
+  outline: 1px solid rgb(44, 44, 44);
 }
 
 .page-content {
@@ -46,6 +49,11 @@ body {
 }
 .survey-start-button span {
   font-weight: bold;
+}
+
+.survey-start-button:hover {
+  -webkit-animation: spacingGreater0-1 2s ease-out 0s 1 normal forwards;
+          animation: spacingGreater0-1 2s ease-out 0s 1 normal forwards;
 }
 
 .central-message {
@@ -86,6 +94,16 @@ hr {
   margin-bottom: 1em;
 }
 
+.feedback {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.feedback:hover {
+  -webkit-animation: spacingGreater1-2 2s ease-out 0s 1 normal forwards;
+          animation: spacingGreater1-2 2s ease-out 0s 1 normal forwards;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
     filter: blur(1px);
@@ -103,5 +121,37 @@ hr {
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes spacingGreater1-2 {
+  0% {
+    letter-spacing: 1px;
+  }
+  100% {
+    letter-spacing: 2px;
+  }
+}
+@keyframes spacingGreater1-2 {
+  0% {
+    letter-spacing: 1px;
+  }
+  100% {
+    letter-spacing: 2px;
+  }
+}
+@-webkit-keyframes spacingGreater0-1 {
+  0% {
+    letter-spacing: 0px;
+  }
+  100% {
+    letter-spacing: 1px;
+  }
+}
+@keyframes spacingGreater0-1 {
+  0% {
+    letter-spacing: 0px;
+  }
+  100% {
+    letter-spacing: 1px;
   }
 }/*# sourceMappingURL=index.css.map */

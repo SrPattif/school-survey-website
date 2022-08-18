@@ -37,7 +37,7 @@
 
             <div class="date-input">
                 <hr>
-                Informe o dia e mês do nascimento:<br>
+                Informe o dia e mês do aniversário:<br>
                 <input type="text" placeholder="DD" class="input-number" id="input-day">/<input type="text"
                     placeholder="MM" class="input-number" id="input-month">
             </div>
@@ -53,8 +53,11 @@
     <div class="footer">
         Desenvolvido por Gustavo Antonio<br>
         <a href="https://www.instagram.com/ogustavo.a/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        <a href="https://twitter.com/ogustavo_a"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="https://github.com/SrPattif"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/srpattif_dev"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://github.com/SrPattif"><i class="fa fa-github" aria-hidden="true"></i></a><br>
+        <a href="../feedback" class="feedback"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Enviar Feedback</a>
+
+
     </div>
 
     <script>

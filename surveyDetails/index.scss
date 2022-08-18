@@ -20,7 +20,6 @@ body {
 }
 
 .input-number {
-  background-color: #ececec;
   border: none;
   padding: 0.5em;
   width: 3em;
@@ -29,6 +28,10 @@ body {
   border: #c5c5c5 1px solid;
   text-align: center;
   font-family: "Poppins";
+}
+
+.input-number:focus {
+  outline: 1px solid rgb(44, 44, 44);
 }
 
 .page-content {
@@ -47,6 +50,10 @@ body {
   span {
     font-weight: bold;
   }
+}
+
+.survey-start-button:hover {
+  animation: spacingGreater0-1 2s ease-out 0s 1 normal forwards;
 }
 
 .central-message {
@@ -88,6 +95,15 @@ hr {
   margin-bottom: 1em;
 }
 
+.feedback {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.feedback:hover {
+  animation: spacingGreater1-2 2s ease-out 0s 1 normal forwards;
+}
+
 @keyframes fadeIn {
   0% {
     filter: blur(1px);
@@ -96,5 +112,25 @@ hr {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes spacingGreater1-2 {
+  0% {
+      letter-spacing: 1px;
+  }
+
+  100% {
+      letter-spacing: 2px;
+  }
+}
+
+@keyframes spacingGreater0-1 {
+  0% {
+      letter-spacing: 0px;
+  }
+
+  100% {
+      letter-spacing: 1px;
   }
 }

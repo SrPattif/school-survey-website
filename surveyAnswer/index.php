@@ -78,7 +78,7 @@
                         <span><?php echo($rowQuestion['description']); ?></span>
                     </div>
                     <div class="custom-select">
-
+                    <hr>
                         <?php
                 $selectAnswersQuery = "SELECT * FROM answer_options WHERE question_id='{$questionId}'";
 
@@ -120,7 +120,7 @@
         <div class="footer">
             Desenvolvido por Gustavo Antonio<br>
             <a href="https://www.instagram.com/ogustavo.a/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/ogustavo_a"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/srpattif_dev"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a href="https://github.com/SrPattif"><i class="fa fa-github" aria-hidden="true"></i></a>
         </div>
     </body>
