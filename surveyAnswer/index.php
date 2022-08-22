@@ -35,7 +35,7 @@
         </div>
 
         <div class="page-content">
-                <?php
+            <?php
                 $selectQuery = "SELECT * FROM surveys WHERE id='{$surveyID}'";
 
                 $queryResult = mysqli_query($connection, $selectQuery);
