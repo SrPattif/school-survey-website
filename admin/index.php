@@ -16,5 +16,6 @@
     <p class="bold">Painel do Administrador</p>
     <button><a href="./createSurvey/">Criar pesquisa</a></button>
     <button><a href="./addQuestion/">Adicionar perguntas</a></button>
+    <button><a href="./answersList/">Ver respostas</a></button>
 </body>
 </html>
